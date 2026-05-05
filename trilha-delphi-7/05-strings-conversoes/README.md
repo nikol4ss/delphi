@@ -34,3 +34,33 @@ BoolToStr(True, True)
 
 Use as versoes com `Def` quando voce nao quer que o programa quebre ao receber
 entrada invalida.
+
+## Exemplo extra: validando texto
+
+```pascal
+Nome := Trim(Nome);
+
+if Nome = '' then
+  Writeln('Nome obrigatorio')
+else
+  Writeln('Nome informado: ', Nome);
+```
+
+Quase todo sistema Delphi usa esse padrao em telas: le texto, remove espacos,
+valida e depois continua.
+
+## Exemplo extra: separar uma linha
+
+```pascal
+Linha := 'Ana;11999990000';
+PontoVirgula := Pos(';', Linha);
+
+if PontoVirgula > 0 then
+begin
+  Nome := Copy(Linha, 1, PontoVirgula - 1);
+  Telefone := Copy(Linha, PontoVirgula + 1, MaxInt);
+end;
+```
+
+Esse tipo de parsing aparece quando voce le arquivos `.txt`, `.csv` simples ou
+retornos antigos de integracao.

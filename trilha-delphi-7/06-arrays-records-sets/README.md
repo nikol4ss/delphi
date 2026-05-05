@@ -45,3 +45,34 @@ type
 ```
 
 Use `in`, `Include` e `Exclude` para trabalhar com sets.
+
+## Exemplo extra: array dinamico de records
+
+```pascal
+var
+  Alunos: array of TAluno;
+
+SetLength(Alunos, 2);
+Alunos[0].Nome := 'Ana';
+Alunos[1].Nome := 'Bruno';
+```
+
+Array dinamico com record e uma forma simples de guardar uma lista em memoria
+antes de aprender banco de dados.
+
+## Exemplo extra: set como permissao
+
+```pascal
+Permissoes := [peLer];
+Include(Permissoes, peEscrever);
+
+if peEscrever in Permissoes then
+  Writeln('Pode alterar');
+```
+
+Set e otimo quando voce tem opcoes ligadas/desligadas.
+
+## Como ler record em codigo real
+
+Quando encontrar `TAlgo = record`, pense: "isso e um pacote de campos". Quando
+encontrar `TAlgo = class`, pense: "isso e um objeto com dados e comportamento".

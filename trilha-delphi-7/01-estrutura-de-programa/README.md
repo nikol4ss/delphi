@@ -40,3 +40,53 @@ classes, formularios, regras de negocio e codigo reutilizavel.
 - Usar `=` para atribuir valor. Em Delphi o correto e `:=`.
 - Fechar o programa com `end;` em vez de `end.`.
 - Esquecer `begin/end` quando um `if`, `for` ou `while` tem mais de um comando.
+
+## Exemplo extra: programa chamando uma procedure
+
+```pascal
+program ProgramaComProcedure;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils;
+
+procedure MostrarBoasVindas;
+begin
+  Writeln('Bem-vindo ao Delphi 7');
+end;
+
+begin
+  MostrarBoasVindas;
+  Readln;
+end.
+```
+
+Leia assim: o Delphi primeiro conhece a procedure, depois executa o bloco
+principal. Isso e muito comum em codigo legado: varias rotinas aparecem antes do
+`begin` principal.
+
+## Exemplo extra: estrutura de unit
+
+```pascal
+unit UMensagens;
+
+interface
+
+procedure MostrarErro(const Texto: string);
+
+implementation
+
+uses
+  Dialogs;
+
+procedure MostrarErro(const Texto: string);
+begin
+  ShowMessage(Texto);
+end;
+
+end.
+```
+
+Se algo esta na `interface`, outro arquivo pode usar. Se esta apenas na
+`implementation`, fica escondido dentro da unit.

@@ -43,3 +43,41 @@ end;
 
 - `Break`: sai do laco.
 - `Continue`: pula para a proxima repeticao.
+
+## Exemplo extra: if com regra clara
+
+```pascal
+if (UsuarioAtivo) and (SenhaCorreta) then
+begin
+  Writeln('Login permitido');
+end
+else
+begin
+  Writeln('Login negado');
+end;
+```
+
+Quando houver mais de uma condicao, use parenteses. Fica mais facil de ler e
+evita erro de precedencia.
+
+## Exemplo extra: menu com repeat
+
+```pascal
+repeat
+  Writeln('1 - Cadastrar');
+  Writeln('2 - Listar');
+  Writeln('0 - Sair');
+  Readln(Opcao);
+
+  case Opcao of
+    1: Writeln('Cadastrar');
+    2: Writeln('Listar');
+    0: Writeln('Saindo');
+  else
+    Writeln('Opcao invalida');
+  end;
+until Opcao = 0;
+```
+
+Esse desenho e a base de muito sistema console: mostra menu, le opcao, executa,
+repete ate sair.
