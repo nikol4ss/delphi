@@ -29,3 +29,38 @@ O programa deve ter tres partes:
 
 Esse e um desenho simples, mas ja e uma base para entender sistemas Delphi
 maiores.
+
+## Exemplo de menu final
+
+```pascal
+repeat
+  MostrarMenu;
+  Readln(Opcao);
+
+  case Opcao of
+    1: CadastrarProduto;
+    2: ListarProdutos;
+    3: SalvarProdutos;
+    0: Writeln('Saindo...');
+  else
+    Writeln('Opcao invalida');
+  end;
+until Opcao = 0;
+```
+
+## Como organizar o projeto final
+
+Comece simples em um unico `.dpr`. Quando funcionar, separe:
+
+- `UProdutos.pas`: record, array e regras de produto.
+- `UArquivos.pas`: salvar e carregar arquivo.
+- `.dpr`: menu principal.
+
+Essa separacao treina o que sistemas maiores fazem: tela/fluxo de um lado,
+regra de negocio de outro.
+
+## Criterio de conclusao
+
+Voce concluiu a trilha basica quando conseguir alterar o projeto final sem
+quebrar tudo: adicionar campo, mudar regra, salvar arquivo e entender onde cada
+parte do codigo esta.

@@ -36,3 +36,34 @@ O parametro `Sender` e o objeto que disparou o evento.
 
 Deixe o evento pequeno. Ele deve pegar dados da tela, chamar uma regra e mostrar
 resultado. Regras maiores devem ir para functions, procedures ou units separadas.
+
+## Exemplo extra: evento pequeno
+
+```pascal
+procedure TFrmPrincipal.BtnSalvarClick(Sender: TObject);
+begin
+  LblResultado.Caption := MontarResultado(EdtNome.Text);
+end;
+```
+
+O evento so liga tela e regra. A regra fica em outro metodo.
+
+## Exemplo extra: regra privada da tela
+
+```pascal
+function TFrmPrincipal.MontarResultado(const Nome: string): string;
+begin
+  if Trim(Nome) = '' then
+    Result := 'Informe o nome'
+  else
+    Result := 'Ola, ' + Trim(Nome);
+end;
+```
+
+Esse padrao deixa o formulario mais facil de manter.
+
+## Como ler uma tela Delphi 7
+
+Primeiro veja os componentes declarados no topo da classe. Depois procure os
+eventos `Click`, `Create`, `Change` e `Close`. Eles mostram o comportamento da
+tela.

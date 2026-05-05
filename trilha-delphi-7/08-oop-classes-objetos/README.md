@@ -40,3 +40,36 @@ end;
 ```
 
 Se criou com `Create`, pense imediatamente em onde vai chamar `Free`.
+
+## Exemplo extra: property com validacao
+
+```pascal
+procedure TProduto.SetPreco(AValor: Currency);
+begin
+  if AValor < 0 then
+    raise Exception.Create('Preco invalido');
+
+  FPreco := AValor;
+end;
+```
+
+Property nao precisa escrever direto no campo. Ela pode chamar um setter para
+validar a entrada.
+
+## Exemplo extra: constructor
+
+```pascal
+constructor TProduto.Create(const ANome: string);
+begin
+  inherited Create;
+  FNome := ANome;
+  FEstoque := 0;
+end;
+```
+
+Constructor deixa o objeto nascer em estado valido.
+
+## Como ler OOP em Delphi legado
+
+Procure campos `F...`, depois properties, depois constructors. Isso revela quais
+dados o objeto guarda e como ele deve ser criado.
