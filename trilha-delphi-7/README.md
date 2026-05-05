@@ -1,17 +1,32 @@
 # Trilha Delphi 7
 
-Esta pasta e uma trilha pratica para aprender a ler e escrever codigo Delphi 7.
-O objetivo nao e decorar tudo de uma vez. O objetivo e passar pelos modulos,
-entender a forma do codigo, praticar a sintaxe e sair conseguindo olhar um
-programa Delphi basico e entender o que esta acontecendo.
+Esta pasta e uma trilha pratica para aprender Delphi 7 do jeito que aparece em
+codigo real: `.dpr`, `.pas`, units, VCL, classes, exceptions, arquivos e SOAP.
+Ela foi organizada para voce estudar em ordem, praticar sempre e terminar com
+base suficiente para ler e escrever codigo Delphi basico.
+
+## Confirmado
+
+- Confirmado: ao concluir todos os modulos e fazer os desafios, o alvo e voce
+  sair sabendo Delphi basico.
+- Confirmado: a trilha ensina a sintaxe essencial do Delphi 7 e inclui uma
+  referencia de sintaxe para consulta.
+- Confirmado: os desafios progridem em dificuldade, saindo de `Writeln` e indo
+  ate projeto final e WebService SOAP/XML.
+- Confirmado: os exemplos evitam sintaxe moderna que nao pertence ao Delphi 7.
+
+Leia tambem `OBJETIVOS_CONFIRMADOS.md` para ver o criterio do que significa
+"sei Delphi basico".
 
 ## Como estudar
 
 1. Leia o `README.md` do modulo.
 2. Abra o exemplo `.pas` ou `.dpr` e leia linha por linha.
-3. Rode o exemplo no Delphi 7, se tiver o ambiente instalado.
+3. Reescreva o exemplo com pequenas mudancas, sem copiar e colar.
 4. Faca o `desafio.md` sem olhar material externo primeiro.
-5. Volte no exemplo e compare sua solucao com a ideia do modulo.
+5. Rode no Delphi 7 quando possivel.
+6. Volte no exemplo e compare sua solucao com a ideia do modulo.
+7. Marque no seu proprio caderno quais sintaxes voce ja reconhece sem ajuda.
 
 ## Ordem sugerida
 
@@ -27,6 +42,13 @@ programa Delphi basico e entender o que esta acontecendo.
 10. `10-arquivos-tstringlist`: arquivos texto e `TStringList`.
 11. `11-vcl-eventos-formularios`: estrutura de formularios VCL.
 12. `12-projeto-final`: mini projeto juntando tudo.
+13. `13-webservice-soap-xml`: SOAP, XML, WSDL, `THTTPRIO` e servidor SOAP.
+
+## Referencias extras
+
+- `REFERENCIA-SINTAXE-DELPHI7.md`: mapa de sintaxe para consulta rapida.
+- `OBJETIVOS_CONFIRMADOS.md`: criterios do que voce deve saber ao terminar.
+- `doc.pas`: arquivo bruto de referencia que ja existia no projeto.
 
 ## Como ler codigo Delphi
 
@@ -34,6 +56,8 @@ Procure primeiro a estrutura:
 
 ```pascal
 program NomeDoPrograma;
+
+{$APPTYPE CONSOLE}
 
 uses
   SysUtils;
@@ -66,9 +90,20 @@ Leia assim:
 - `try/finally` serve para garantir limpeza.
 - `try/except` serve para tratar erro.
 - `interface` de uma unit e a parte visivel; `implementation` e a parte interna.
+- `uses` mostra de onde vem cada classe, function ou procedure.
+- Evento VCL e apenas uma procedure chamada pela tela.
+- SOAP em Delphi 7 normalmente aparece como XML + HTTP + interface importada por WSDL.
 
-## Observacao sobre o arquivo original
+## Como saber se voce esta evoluindo
 
-O arquivo `delphi.pas` da raiz estava vazio. O arquivo `doc.pas` tinha bastante
-conteudo de referencia, entao esta trilha reorganiza as ideias em modulos menores
-e usa exemplos focados em Delphi 7.
+Voce esta evoluindo quando consegue abrir um `.pas` e responder:
+
+1. Este arquivo e `program`, `unit` ou formulario VCL?
+2. Quais units ele importa no `uses`?
+3. Quais tipos, classes e records ele declara?
+4. Quais procedures/functions fazem a regra principal?
+5. Onde objetos sao criados com `Create`?
+6. Onde objetos sao liberados com `Free`?
+7. Onde erros sao tratados com `try/except`?
+8. Onde limpeza e garantida com `try/finally`?
+9. Quais dados entram, quais regras rodam e quais dados saem?
