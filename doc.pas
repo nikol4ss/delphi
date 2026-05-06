@@ -59,8 +59,6 @@ type
     stNotFound  = 404,
     stError     = 500
   );
-  asd
-
 // ============================================================
 // SEÇÃO 3: CONJUNTOS (Set)
 // Set é como um "checklist" de valores de um enum
