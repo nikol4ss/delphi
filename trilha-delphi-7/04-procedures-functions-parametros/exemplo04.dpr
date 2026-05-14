@@ -4,7 +4,7 @@ program Exemplo04;
 
 uses
   SysUtils;
-
+awda
 procedure MostrarTitulo(const Titulo: string);
 begin
   Writeln;
