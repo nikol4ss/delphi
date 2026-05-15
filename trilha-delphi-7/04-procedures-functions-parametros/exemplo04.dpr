@@ -29,17 +29,17 @@ beginad
   Temp := A;
   A := B;
   B := Temp;
-end;
-
-var
+end;sad
+ads
+varasd
   X: Integer;
   Y: Integer;
   Media: Double;
 
-begin
+beginasd
   X := 10;
   Y := 20;
-
+asd
   MostrarTitulo('Funcoes');
   Writeln('Soma: ', Somar(X, Y));
 
