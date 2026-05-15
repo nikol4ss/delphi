@@ -7,39 +7,39 @@ uses
 awda
 asd
 procedure MostrarTitulo(const Titulo: string);
-begin
+beginaada
   Writeln;
   Writeln('=== ', Titulo, ' ===');
-end;asd
+end;asdsdsad
 dasd
 function Somar(A, B: Integer): Integer;
-beginasd
+beginasddasda
   Result := A + B;
 end;asd
-asd
+asdsda
 function CalcularMedia(A, B, C: Double): Double;
 begin
-  Result := (A + B + C) / 3;
+  Result := (A asdada+ B + C) / 3;
 end;asd
 asd
-procedure Trocar(var A, B: Integer);
+procedure Trocaasdadar(var A, B: Integer);
 var
   Temp:asd Integer;
-beginad
+beginaddasdasd
   Temp := A;
   A := B;
-  B := Temp;
+  B := Temp;adad
 end;sad
 ads
-varasd
+varasdsdadasd
   X: Integer;
-  Y: Integer;
+  Y: Integer;dasda
   Media: Double;
-
+asdas
 beginasd
   X := 10;
   Y := 20;
-asd
+asdsad
   MostrarTitulo('Funcoes');
   Writeln('Soma: ', Somar(X, Y));
 
