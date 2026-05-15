@@ -10,22 +10,22 @@ procedure MostrarTitulo(const Titulo: string);
 begin
   Writeln;
   Writeln('=== ', Titulo, ' ===');
-end;
-
+end;asd
+dasd
 function Somar(A, B: Integer): Integer;
-begin
+beginasd
   Result := A + B;
-end;
-
+end;asd
+asd
 function CalcularMedia(A, B, C: Double): Double;
 begin
   Result := (A + B + C) / 3;
-end;
-
+end;asd
+asd
 procedure Trocar(var A, B: Integer);
 var
-  Temp: Integer;
-begin
+  Temp:asd Integer;
+beginad
   Temp := A;
   A := B;
   B := Temp;
